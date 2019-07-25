@@ -1,0 +1,82 @@
+.ct_container .ct_content {
+    padding-bottom: 0;
+}
+.ct_search {
+    margin-top: 10px;
+    padding: 0 10px;
+}
+.ct_search form {
+    position: relative;
+}
+.ct_search form .search_input {
+    background: #fff;
+    border: 1px solid #069;
+    text-align: left;
+    font-size: 12px;
+    /*padding: 0px 70px 0 10px;*/
+}
+.ct_search form .search_btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60px;
+    height: 34px;
+    color: #fff;
+    background: #069;
+    text-align: center;
+    line-height: 34px;
+    font-size: 12px;
+    border-radius: 0 6px 6px 0;
+}
+
+.ct_history {
+    font-size: 12px;
+    padding: 0 10px;
+    color: #999;
+    padding-bottom: 50px;
+    /*height: 500px;*/
+    overflow: hidden;
+}
+.ct_history .fa-trash {
+    height: 21px;
+    padding: 0 10px;
+    color: #999;
+    padding-bottom: 50px;
+}
+
+.ct_history .ct_history_ul_scroll {
+    height: 500px;
+    overflow: hidden;
+}
+.ct_history .ct_history_ul_scroll_content {
+    padding-bottom: 50px;
+    overflow: hidden;
+}
+
+.ct_history ul {
+    border-bottom: 1px dashed #ccc;
+    margin-top: 10px;
+}
+.ct_history ul li {
+    border: 1px dashed #ccc;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: none;
+    padding-left: 10px;
+    position: relative;
+}
+.ct_history ul li a {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 30px;
+}
+
+.ct_history ul li .mui-icon-closeempty {
+    /*float: right;*/
+    /*margin-top: 2px;*/
+    position: absolute;
+    right: 0;
+    top: 3px;
+}

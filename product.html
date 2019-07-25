@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <!--ios 是否运行创建快捷启动方式-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--遇到数字不让转成电话号码形式-->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="乐淘是中国最大的正品运动鞋、皮鞋、网上专卖。">
+    <meta name="keywords" content="乐淘 乐淘鞋城 买鞋子 上乐淘 运动鞋 篮球鞋 帆布鞋 男鞋 女鞋 鞋">
+    <!--网站小图标-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/product.css">
+
+    <title>传淘-商品详情</title>
+</head>
+<body>
+<!--首页内容-->
+<div class="ct_container">
+    <header class="ct_header">
+        <a href="javascript:history.back();" class="left"><span class="fa fa-arrow-left"></span></a>
+        <h3>商品详情</h3>
+        <a href="index.html" class="right"><span class="fa fa-home"></span></a>
+    </header>
+    <div class="ct_content">
+        <div class="ct_wrapper">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll" id="product_box">
+                    <!--动态渲染-->
+
+                    <div class="loading">
+                        <span class="mui-icon mui-icon-spinner"></span>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p_option">
+        <a href="user/cart.html" class="btn_cart fa fa-shopping-cart"></a>
+        <a href="javascript:;" class="btn_addCart">加入购物车</a>
+        <a href="javascript:;" class="btn_pay">立即购买</a>
+    </div>
+</div>
+<script type="text/html" id="productTpl">
+    <!--图片轮播-->
+    <div class="mui-slider">
+        <div class="mui-slider-group mui-slider-loop">
+            <%if(!model.pic || model.pic.length == 0){
+            model.pic = [{'picAddr':'/m/images/none.png'}];
+            }
+            %>
+            <div class="mui-slider-item mui-slider-item-duplicate"><a href="javascript:;"><img src="<%=model.pic[model.pic.length-1].picAddr%>" /></a></div>
+            <%for (var i = 0; i < model.pic.length; i ++) {%>
+            <div class="mui-slider-item"><a href="javascript:;"><img src="<%=model.pic[i].picAddr%>" /></a></div>
+            <%}%>
+            <div class="mui-slider-item mui-slider-item-duplicate"><a href="javascript:;"><img src="<%=model.pic[0].picAddr%>" /></a></div>
+        </div>
+        <div class="mui-slider-indicator">
+            <%for(var i = 0; i< model.pic.length; i ++) {%>
+            <div class="mui-indicator <%=i==0?'mui-active':''%>"></div>
+            <%}%>
+        </div>
+    </div>
+    <!--商品名称-->
+    <div class="p_title"><%=model.proName%></div>
+    <!--商品价格-->
+    <div class="p_price">
+        <%if(model.sale) {%>
+        <span class="fold"><%=model.sale%><span>折</span></span>
+        <%}%>
+        价格：<strong class="present">￥<%=model.price%></strong>
+        <del class="original">￥<%=model.oldPrice%></del>
+    </div>
+    <!--商品尺码-->
+    <div class="p_size">
+        尺码：
+        <%
+        var size = model.size || '35-45';
+        var arr = size.split('-');
+        var startSize = arr[0], endSize = arr[1];
+        %>
+        <%for(var i = startSize; i <= endSize; i ++) {%>
+        <span class="btn_size"><%=i%></span>
+        <%}%>
+
+    </div>
+    <!--商品数量-->
+    <div class="p_number">
+        数量：
+        <span class="jian">-</span>
+        <input type="text" readonly value="0" data-max="<%=model.num%>">
+        <span class="jia">+</span>
+        剩余：<%=model.num%>件
+    </div>
+    <!--商品详情-->
+    <div class="p_detail">
+        <%=model.proDesc%>
+    </div>
+</script>
+
+<script src="assets/mui/js/mui.min.js"></script>
+<script src="assets/zepto/zepto.min.js"></script>
+<script src="assets/artTemplate/template-native.js"></script>
+<script src="js/common.js"></script>
+<script src="js/product.js"></script>
+</body>
+</html>

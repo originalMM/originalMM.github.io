@@ -1,0 +1,118 @@
+[data-product] input,
+[data-product] .novalidate {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    font-size: 12px;
+}
+
+[data-product] .name {
+    height: 40px;
+    line-height: 20px;
+    width: 100%;
+    overflow: hidden;
+    white-space: normal;
+    color: #666;
+}
+[data-product] .price {
+    color: #f30;
+}
+[data-product] .oldPrice {
+    color: #ccc;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+[data-product] .size{
+    font-size: 12px;
+}
+
+[data-product] .number {
+    float: right;
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+.mui-table-view .mui-media-object {
+    max-width: 60px;
+    width: 60px;
+    height: 60px;
+}
+
+.cart_order {
+    height: 30px;
+    line-height: 30px;
+    border-top: 1px solid #ccc;
+    position: fixed;
+    left: 0;
+    bottom: 50px;
+    background: #fff;
+    width: 100%;
+    z-index: 999;
+    padding-left: 20px;
+    font-size: 14px;
+    color: #f30;
+    font-weight: 600;
+}
+.cart_order a {
+    width: 100px;
+    text-align: center;
+    background: #f30;
+    display: block;
+    float: right;
+    color: #fff;
+}
+
+.ct_container .ct_content{
+    padding-bottom: 85px;
+}
+
+
+.cart_upate {
+    text-align: left;
+}
+.p_number {
+    padding: 5px;
+    font-size: 14px;
+}
+.p_number .jian, .p_number .jia {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+}
+.p_number input{
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    display: inline-block;
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+}
+.p_size {
+    padding: 5px;
+    font-size: 14px;
+}
+.p_size .btn_size {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+.p_size .btn_size.now {
+    background: #fa672d;
+}

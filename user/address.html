@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <!--ios 是否运行创建快捷启动方式-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--遇到数字不让转成电话号码形式-->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="乐淘是中国最大的正品运动鞋、皮鞋、网上专卖。">
+    <meta name="keywords" content="乐淘 乐淘鞋城 买鞋子 上乐淘 运动鞋 篮球鞋 帆布鞋 男鞋 女鞋 鞋">
+    <!--网站小图标-->
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../assets/mui/css/mui.min.css">
+    <link rel="stylesheet" href="../assets/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/user.css">
+
+    <title>传淘-收货地址管理</title>
+</head>
+<body>
+<!--首页内容-->
+<div class="ct_container bgg">
+    <header class="ct_header">
+        <a href="javascript:history.back();" class="left"><span class="fa fa-arrow-left"></span></a>
+        <h3>收获地址管理</h3>
+        <a href="javascript:;" class="right"><span class="mui-icon-more mui-icon addMore"></span></a>
+    </header>
+    <div class="ct_content">
+        <div class="ct_wrapper">
+
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--<div class="loading"></div>-->
+
+                    <div class="loading">
+                        <span class="mui-icon mui-icon-spinner"></span>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script type="text/html" id="addressTpl">
+        <% if(model && model.length < 5){ %>
+        <a class="mui-btn btn_link mui-block" href="addressManager.html">添加收货地址</a>
+        <%}%>
+
+        <ul class="mui-table-view">
+            <%
+            if(model && model.length){
+            for(var i = model.length - 1; i>=0; i --) {
+            var item = model[i];
+            %>
+            <li class="mui-table-view-cell">
+                <div class="mui-slider-right mui-disabled">
+                    <a data-id="<%=item.id%>" class="mui-btn mui-btn-red">删除</a>
+                </div>
+                <a href="addressManager.html?addressId=<%=item.id%>" class="mui-navigate-right mui-slider-handle">
+                    <div class="delivery">
+                        邮&nbsp;编：<span><%=item.postCode%></span>
+                        收货人：<span><%=item.recipients%></span>
+                    </div>
+                    <div class="address"><%=item.address%><%=item.addressDetail%></div>
+                </a>
+            </li>
+            <%
+            }
+            }
+            %>
+        </ul>
+</script>
+    <footer class="ct_footer">
+        <a href="../index.html" class="tab_home fa fa-home"><span>首页</span></a>
+        <a href="../category.html" class="tab_cate fa fa-bars"><span>分类</span></a>
+        <a href="cart.html" class="tab_cart fa fa-shopping-cart"><span>购物车</span></a>
+        <a href="/m/user/index.html" class="tab_user fa fa-user now"><span>会员中心</span></a>
+    </footer>
+</div>
+<script src="../assets/mui/js/mui.min.js"></script>
+<script src="../assets/zepto/zepto.min.js"></script>
+<script src="../assets/artTemplate/template-native.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/user/address.js"></script>
+</body>
+</html>
